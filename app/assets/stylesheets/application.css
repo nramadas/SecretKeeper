@@ -11,3 +11,25 @@
  *= require_self
  *= require_tree .
  */
+
+.button_to {
+  display: inline;
+}
+
+.button_to div {
+  display: inline;
+}
+
+.secret {
+  padding: 10px;
+  margin: 10px;
+  border: 1px dashed black;
+  width: 200px;
+}
+
+.flash {
+  padding-left: 5px;
+  color: red;
+  border: 1px dashed red;
+  width: 200px;
+}

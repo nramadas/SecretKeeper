@@ -1,0 +1,17 @@
+<h1><%= @user.name %></h1>
+<%= button_to 'Logout', session_path(id: @user.id), method: :delete %>
+<h3>Secrets: </h3>
+<% @user.secrets.each do |s| %>
+<div class="secret">
+  <b><%= s.title %>:</b>
+  <p>
+    <%= s.body %>
+  </p>
+    <%= button_to "edit", edit_secret_path(s), method: :get %>
+    <%= button_to "delete", secret_path(s), method: :delete,
+        confirm: "Really delete?" %>
+</div>
+<% end %>
+<br>
+<%= button_to 'Create New Secret', new_secret_path, method: :get %>
+
