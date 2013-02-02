@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
             message: "must between 1 to 30 characters" }
 
   validates :password, length: { minimum: 8,
-            message: "must be a mimimum of 8 characters" }
+            message: "must be a mimimum of 8 characters" },
+            allow_blank: true
 
   validates_uniqueness_of :email,
                           message: "is already registered"
@@ -23,5 +24,12 @@ class User < ActiveRecord::Base
                       message: "Invalid email"
 
   has_many :secrets
+
+  def reset_pwd
+    temp = SecureRandom.hex[0..7]
+    self.password = temp
+    self.save
+    return temp
+  end
 
 end

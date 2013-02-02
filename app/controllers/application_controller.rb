@@ -12,12 +12,10 @@ class ApplicationController < ActionController::Base
       token = SecureRandom.uuid
       cookies[:user_id] = user.id
       cookies[:token] = token
-      user.session_token = token
+      user.update_attributes(session_token: token)
 
-      user.save!
       redirect_to user_path(user), notice: 'Logged in'
     else
-      flash.notice = user.errors.full_messages.first
       @session = User.new
       render 'sessions/new'
     end

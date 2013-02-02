@@ -14,6 +14,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 group :development do
   gem 'better_errors'
   gem 'meta_request', '0.2.1'
+  gem 'letter_opener'
 end
 
 group :assets do
