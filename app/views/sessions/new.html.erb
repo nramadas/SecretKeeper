@@ -1,4 +1,4 @@
-<h1>Welcome to Dark Secrets</h1>
+<h1 class="title">Welcome to DarkSecrets</h1>
 <h3>Please login:</h3>
 <%= form_for(@session, url: session_path, method: :post) do |f| %>
 <%= f.label :email, "email" %>
@@ -10,6 +10,7 @@
 <%= f.submit "Login" %>
 <% end %>
 <%= link_to "Forgot Password?", reset_pwd_users_path, method: :get %>
+<br>
 <hr>
 <h3>New user?</h3>
 <%= form_for(@session, url: users_path, method: :post) do |f| %>
